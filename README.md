@@ -1,154 +1,48 @@
-# End-to-End DevOps Project
+🚀 End-to-End DevOps Project – Python Application
 
-## 📌 Project Overview
+Project Overview
 
-This project demonstrates a complete **end-to-end DevOps workflow** for deploying, monitoring, and validating a Python-based application using modern DevOps tools and practices.
+This project demonstrates a complete end-to-end DevOps workflow for building, deploying, monitoring, and validating a Python-based REST API application using modern DevOps tools and best practices.
 
-The project covers **source code management, CI/CD automation, containerization, cloud deployment, monitoring, and API testing** in a real-world setup.
+The implementation simulates a real-world production DevOps setup, covering:
 
----
+Source code management
 
-## 🛠️ Tools & Technologies Used
+CI/CD automation
 
-* **GitHub** – Source code management and version control
-* **Docker** – Containerization of the Python application
-* **Jenkins** – CI/CD pipeline automation
-* **AWS EC2 (Linux)** – Cloud infrastructure for deployment
-* **Prometheus** – Metrics collection and monitoring
-* **Grafana** – Visualization and monitoring dashboards
-* **Postman** – API testing and validation
+Containerization
 
----
+Cloud deployment
 
-## 🧩 Project Architecture
+Monitoring & visualization
 
-```text
-Local / EC2 → GitHub → Jenkins → Docker → Application
-                          ↘ Prometheus → Grafana
-Postman → Application API (Validation)
-```
+API testing and validation
 
----
-
-## 🚀 Step-by-Step Project Implementation
-
-### Step 1: Application Development
-
-* Developed a **Python-based REST API application**.
-* The application exposes endpoints such as:
-
-  * `/withdraw`
-* Application runs on port **8000**.
-
----
-
-### Step 2: Version Control with GitHub
-
-* Created a GitHub repository to manage application source code.
-* All code changes are pushed to GitHub.
-* GitHub acts as the trigger point for the CI/CD pipeline.
-
----
-
-### Step 3: Docker Containerization
-
-* Created a **Dockerfile** to containerize the Python application.
-* Built Docker images locally and through Jenkins.
-* Ensured the application runs consistently across environments.
-
----
-
-### Step 4: CI/CD Automation Using Jenkins
-
-* Installed Jenkins on an **AWS EC2 Linux instance**.
-* Configured Jenkins to:
-
-  * Pull code from GitHub
-  * Build Docker images
-  * Run containers automatically
-* Jenkins pipeline executes on every code push.
-
----
-
-### Step 5: Deployment on AWS EC2
-
-* Provisioned an **EC2 Linux server** on AWS.
-* Deployed the Dockerized application on EC2.
-* Exposed application port to allow external access.
-
----
-
-### Step 6: Monitoring with Prometheus
-
-* Installed **Prometheus** on the EC2 instance.
-* Configured Prometheus to collect system metrics such as:
-
-  * CPU usage
-  * Memory usage
-  * Disk usage
-  * Network traffic
-
----
-
-### Step 7: Visualization with Grafana
-
-* Installed **Grafana** on the EC2 instance.
-* Configured secure login for Grafana.
-* Added Prometheus as a **data source**.
-* Created dashboards to visualize:
-
-  * CPU utilization
-  * Memory consumption
-  * Disk usage
-  * Network metrics
-
----
-
-### Step 8: API Testing Using Postman
-
-* Used **Postman** to validate application APIs after deployment.
-* Tested endpoints by sending HTTP requests such as:
-
-```http
-
-``'
-
-* Verified correct API responses and application behavior.
-* Ensured the application is accessible and functional after CI/CD deployment.
-
----
-
-## ✅ Key Outcomes
-
-* Automated build and deployment using Jenkins
-* Containerized application using Docker
-* Cloud deployment on AWS EC2
-* Real-time monitoring using Prometheus and Grafana
-* API validation using Postman
-
----
-
-## 📚 What I Learned
-
-* Designing CI/CD pipelines using Jenkins
-* Docker-based application deployment
-* Monitoring and observability concepts
-* Working with AWS EC2 Linux servers
-* End-to-end DevOps project implementation
-
----
-
-## 🔮 Future Enhancements
-
-* Add alerting using Grafana Alertmanager
-* Deploy application using Docker Compose or Kubernetes
-* Implement centralized logging
-* Secure APIs using authentication
-
----
-
-## 👤 Author
-
-* Vibhakar Singh
-
-This project reflects hands-on experience with real-world DevOps tools and workflows.
+🛠️ Tools & Technologies
+Category	Tools
+Source Control	GitHub
+CI/CD	Jenkins
+Containerization	Docker
+Cloud	AWS EC2 (Linux)
+Monitoring	Prometheus
+Visualization	Grafana
+API Testing	Postman
+Language	Python (REST API)
+🧩 Project Architecture
+Developer / EC2
+      |
+      v
+   GitHub
+      |
+      v
+   Jenkins (CI/CD)
+      |
+      v
+   Docker Container
+      |
+      v
+ Python Application (Port 8000)
+      |
+      +--> Prometheus --> Grafana
+      |
+      +--> Postman (API Validation)
