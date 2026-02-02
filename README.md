@@ -110,8 +110,8 @@ Postman → Application API (Validation)
 * Tested endpoints by sending HTTP requests such as:
 
 ```http
-http://3.110.122.150:8000/withdraw?account=123456&pin=1234&amount=100
-```
+
+``'
 
 * Verified correct API responses and application behavior.
 * Ensured the application is accessible and functional after CI/CD deployment.
