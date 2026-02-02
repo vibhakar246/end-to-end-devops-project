@@ -46,3 +46,12 @@ Developer / EC2
       +--> Prometheus --> Grafana
       |
       +--> Postman (API Validation)
+
+
+
+
+<img width="1894" height="916" alt="repository main page" src="https://github.com/user-attachments/assets/fb1a852f-07dc-4cb8-9dba-063da3a37f2d" />
+
+
+
+      
