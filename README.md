@@ -80,23 +80,3 @@ sequenceDiagram
     M->>M: Prometheus Scrapes
     M->>M: Grafana Visualizes
 ```
-```mermaid
-sequenceDiagram
-    participant Dev as Developer
-    participant GH as GitHub
-    participant J as Jenkins
-    participant D as Docker
-    participant AWS as AWS EC2
-    participant M as Monitoring
-
-    Dev->>GH: Git Push
-    GH->>J: Webhook Trigger
-    J->>J: Checkout Code
-    J->>J: Run Tests
-    J->>D: Build Docker Image
-    D->>AWS: Deploy Container
-    AWS->>M: Expose Metrics
-    M->>M: Prometheus Scrapes
-    M->>M: Grafana Visualizes
-```
-   
