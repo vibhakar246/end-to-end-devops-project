@@ -1,7 +1,22 @@
 This project demonstrates a complete end-to-end DevOps workflow for building, deploying, monitoring, and validating a Python-based REST API application using modern DevOps tools and best practices. It simulates a real-world production DevOps setup, covering CI/CD automation, containerization, cloud deployment, monitoring, visualization, and API testing.
 
+🔁 CI/CD Automation
+
+🐳 Containerization
+
+☁️ Cloud Deployment (AWS EC2)
+
+📊 Monitoring & Metrics Collection
+
+📈 Visualization Dashboards
+
+🧪 API Testing
+
+
+
+
 🛠️ Tools & Technologies
-Category	Tools
+Category	Tools Used
 🗂️ Source Control	GitHub
 🔁 CI/CD	Jenkins
 🐳 Containerization	Docker
@@ -9,39 +24,39 @@ Category	Tools
 📈 Monitoring	Prometheus
 📊 Visualization	Grafana
 🧪 API Testing	Postman
+🐍 Backend	Python (Flask)
+
 🧩 System Architecture
 graph TB
-    subgraph "Development"
+    subgraph Development
         DEV[Developer] -->|git push| GH[GitHub Repository]
     end
-    
-    subgraph "CI/CD Pipeline"
-        GH -->|webhook trigger| J[Jenkins Server - AWS EC2]
-        J -->|build & test| DOCKER[Docker Build]
-        DOCKER -->|push| REG[Docker Registry]
-    end
-    
-    subgraph "Deployment"
-        REG -->|pull & run| EC2[AWS EC2 Instance]
-        EC2 -->|exposes| API[Python REST API - Port 8000]
-    end
-    
-    subgraph "Monitoring"
-        API -->|metrics endpoint| PROM[Prometheus - Port 9090]
-        PROM -->|data source| GRAF[Grafana - Port 3000]
-    end
-    
-    subgraph "Testing"
-        TESTER[QA Engineer] -->|API tests| POST[Postman]
-        POST -->|validate| API
-    end
-    
-    subgraph "Monitoring Access"
-        ADMIN[Admin] -->|view dashboards| GRAF
-        GRAF -->|visualize| DASH[Interactive Dashboards]
+
+    subgraph CI_CD_Pipeline
+        GH -->|Webhook Trigger| J[Jenkins Server - AWS EC2]
+        J -->|Build & Test| DOCKER[Docker Build]
+        DOCKER -->|Push Image| REG[Docker Registry]
     end
 
-    🔄 CI/CD Flow
+    subgraph Deployment
+        REG -->|Pull & Run| EC2[AWS EC2 Instance]
+        EC2 -->|Expose Port 8000| API[Python Flask REST API]
+    end
+
+    subgraph Monitoring
+        API -->|/metrics endpoint| PROM[Prometheus - Port 9090]
+        PROM -->|Data Source| GRAF[Grafana - Port 3000]
+    end
+
+    subgraph Testing
+        QA[QA Engineer] -->|API Tests| POST[Postman]
+        POST -->|Validate Responses| API
+    end
+
+    subgraph Monitoring_Access
+        ADMIN[Admin] -->|View Dashboards| GRAF
+    end
+🔄 CI/CD Pipeline Flow
 sequenceDiagram
     participant Dev as Developer
     participant GH as GitHub
@@ -49,15 +64,14 @@ sequenceDiagram
     participant D as Docker
     participant AWS as AWS EC2
     participant M as Monitoring
-    
-    Dev->>GH: git push
-    GH->>J: Webhook trigger
-    J->>J: Checkout code
-    J->>J: Run tests
-    J->>D: Build Docker image
-    D->>AWS: Deploy container
-    AWS->>M: Expose metrics
-    M->>M: Prometheus scrapes
-    M->>M: Grafana visualizes
 
-    
+    Dev->>GH: git push
+    GH->>J: Webhook Trigger
+    J->>J: Checkout Code
+    J->>J: Install Dependencies
+    J->>J: Run Tests (Pytest)
+    J->>D: Build Docker Image
+    D->>AWS: Deploy Container
+    AWS->>M: Expose Metrics
+    M->>M: Prometheus Scrapes
+    M->>M: Grafana Visualizes
