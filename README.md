@@ -27,6 +27,7 @@ Category	Tools Used
 🐍 Backend	Python (Flask)
 
 🧩 System Architecture
+```mermaid
 graph TB
     subgraph Development
         DEV[Developer] -->|git push| GH[GitHub Repository]
@@ -56,7 +57,10 @@ graph TB
     subgraph Monitoring_Access
         ADMIN[Admin] -->|View Dashboards| GRAF
     end
+```
+
 🔄 CI/CD Pipeline Flow
+```mermaid
 sequenceDiagram
     participant Dev as Developer
     participant GH as GitHub
@@ -70,6 +74,13 @@ sequenceDiagram
     J->>J: Checkout Code
     J->>J: Install Dependencies
     J->>J: Run Tests (Pytest)
+    J->>D: Build Docker Image
+    D->>AWS: Deploy Container
+    AWS->>M: Expose Metrics
+    M->>M: Prometheus Scrapes
+    M->>M: Grafana Visualizes
+```
+
     J->>D: Build Docker Image
     D->>AWS: Deploy Container
     AWS->>M: Expose Metrics
